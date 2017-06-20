@@ -9,7 +9,7 @@ class TeamsController {
 
     getTeams(req, res) {
         console.log('*** getTeams');
-        teamsRepo.getCustomers((err, data) => {
+        teamsRepo.getTeams((err, data) => {
             if (err) {
                 console.log('*** getTeams error: ' + util.inspect(err));
                 res.json(null);

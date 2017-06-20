@@ -6,7 +6,6 @@ const TeamSchema = new Schema({
   name        : { type : String, required: true, trim: true },
   description : { type : String, required: true, trim: true },
   shirtColor  : { type : String, required: true, trim: true },
-  address     : { type : String, required: true, trim: true },
   city        : { type : String, required: true, trim: true }
 });
 
