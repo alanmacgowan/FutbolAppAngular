@@ -9,19 +9,18 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { SharedModule } from "./shared/shared.module";
 import { CoreModule } from "./core/core.module";
 import { TeamModule } from "./team/team.module";
-import { appRouting } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    appRouting.components
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    appRouting.routes, 
+    TeamModule, 
+    AppRoutingModule,
     CoreModule,   //Singleton objects
     SharedModule  //Shared (multi-instance) objects
   ],

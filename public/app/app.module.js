@@ -10,11 +10,12 @@ var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 var shared_module_1 = require("./shared/shared.module");
 var core_module_1 = require("./core/core.module");
-var app_routing_1 = require("./app.routing");
+var team_module_1 = require("./team/team.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,14 +25,14 @@ AppModule = __decorate([
     core_1.NgModule({
         declarations: [
             app_component_1.AppComponent,
-            page_not_found_component_1.PageNotFoundComponent,
-            app_routing_1.appRouting.components
+            page_not_found_component_1.PageNotFoundComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            app_routing_1.appRouting.routes,
+            team_module_1.TeamModule,
+            app_routing_module_1.AppRoutingModule,
             core_module_1.CoreModule,
             shared_module_1.SharedModule //Shared (multi-instance) objects
         ],
