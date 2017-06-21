@@ -9,11 +9,15 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { SharedModule } from "./shared/shared.module";
 import { CoreModule } from "./core/core.module";
 import { TeamModule } from "./team/team.module";
+import { FooterComponent } from "./footer.component";
+import { HeaderComponent } from "./header.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

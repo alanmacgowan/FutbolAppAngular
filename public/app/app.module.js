@@ -16,6 +16,8 @@ var page_not_found_component_1 = require("./page-not-found.component");
 var shared_module_1 = require("./shared/shared.module");
 var core_module_1 = require("./core/core.module");
 var team_module_1 = require("./team/team.module");
+var footer_component_1 = require("./footer.component");
+var header_component_1 = require("./header.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,7 +27,9 @@ AppModule = __decorate([
     core_1.NgModule({
         declarations: [
             app_component_1.AppComponent,
-            page_not_found_component_1.PageNotFoundComponent
+            page_not_found_component_1.PageNotFoundComponent,
+            footer_component_1.FooterComponent,
+            header_component_1.HeaderComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
