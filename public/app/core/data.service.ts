@@ -7,7 +7,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
 
-import { ITeam } from '../shared/interfaces';
+import { ITeam, IPagedResults } from '../shared/interfaces';
 
 @Injectable()
 export class DataService {
@@ -27,6 +27,18 @@ export class DataService {
                    .catch(this.handleError);
     }
 
+    getTeamsPage(page: number, pageSize: number) : Observable<IPagedResults<ITeam[]>> {
+        return this.http.get(`${this.baseUrl}/page/${page}/${pageSize}`)
+                    .map((res: Response) => {
+                        const totalRecords = +res.headers.get('x-inlinecount');
+                        let teams = res.json();
+                        return {
+                            results: teams,
+                            totalRecords: totalRecords
+                        };
+                    })
+                    .catch(this.handleError);
+    }
     
     private handleError(error: any) {
         console.error('server error:', error); 

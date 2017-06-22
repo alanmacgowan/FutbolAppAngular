@@ -29,6 +29,18 @@ var DataService = (function () {
         })
             .catch(this.handleError);
     };
+    DataService.prototype.getTeamsPage = function (page, pageSize) {
+        return this.http.get(this.baseUrl + "/page/" + page + "/" + pageSize)
+            .map(function (res) {
+            var totalRecords = +res.headers.get('x-inlinecount');
+            var teams = res.json();
+            return {
+                results: teams,
+                totalRecords: totalRecords
+            };
+        })
+            .catch(this.handleError);
+    };
     DataService.prototype.handleError = function (error) {
         console.error('server error:', error);
         if (error instanceof http_1.Response) {

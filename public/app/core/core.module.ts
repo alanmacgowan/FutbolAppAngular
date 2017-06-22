@@ -3,11 +3,17 @@ import { HttpModule, XSRFStrategy, CookieXSRFStrategy } from '@angular/http';
 
 import { DataService } from './data.service';
 import { EnsureModuleLoadedOnceGuard } from "../shared/ensureModuleLoadedOnceGuard";
+import { DataFilterService } from "./data-filter.service";
+import { TrackByService } from "./trackby.service";
+import { Sorter } from "./sorter";
 
 @NgModule({
   imports: [ HttpModule ],
   providers: [
-    DataService ] // these should be singleton
+    DataService,
+    DataFilterService,
+    Sorter,
+    TrackByService ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {    //Ensure that CoreModule is only loaded into AppModule
 

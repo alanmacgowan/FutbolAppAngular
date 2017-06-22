@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TeamComponent } from "./team.component";
+import { TeamsGridComponent } from "./teams-grid.component";
 
 const routes: Routes = [
   { path: '', component: TeamComponent, data: {title: 'Teams'} },
@@ -12,4 +13,4 @@ const routes: Routes = [
 })
 export class TeamRoutingModule { }
 
-export const routedComponents = [TeamComponent];
+export const routedComponents = [TeamComponent, TeamsGridComponent ];

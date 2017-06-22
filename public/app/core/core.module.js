@@ -26,6 +26,9 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var data_service_1 = require("./data.service");
 var ensureModuleLoadedOnceGuard_1 = require("../shared/ensureModuleLoadedOnceGuard");
+var data_filter_service_1 = require("./data-filter.service");
+var trackby_service_1 = require("./trackby.service");
+var sorter_1 = require("./sorter");
 var CoreModule = (function (_super) {
     __extends(CoreModule, _super);
     //Looks for the module in the parent injector to see if it's already been loaded (only want it loaded once)
@@ -38,8 +41,11 @@ CoreModule = __decorate([
     core_1.NgModule({
         imports: [http_1.HttpModule],
         providers: [
-            data_service_1.DataService
-        ] // these should be singleton
+            data_service_1.DataService,
+            data_filter_service_1.DataFilterService,
+            sorter_1.Sorter,
+            trackby_service_1.TrackByService
+        ]
     }),
     __param(0, core_1.Optional()), __param(0, core_1.SkipSelf()),
     __metadata("design:paramtypes", [CoreModule])

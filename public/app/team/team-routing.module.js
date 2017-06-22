@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var team_component_1 = require("./team.component");
+var teams_grid_component_1 = require("./teams-grid.component");
 var routes = [
     { path: '', component: team_component_1.TeamComponent, data: { title: 'Teams' } },
 ];
@@ -24,5 +25,5 @@ TeamRoutingModule = __decorate([
     })
 ], TeamRoutingModule);
 exports.TeamRoutingModule = TeamRoutingModule;
-exports.routedComponents = [team_component_1.TeamComponent];
+exports.routedComponents = [team_component_1.TeamComponent, teams_grid_component_1.TeamsGridComponent];
 //# sourceMappingURL=team-routing.module.js.map
