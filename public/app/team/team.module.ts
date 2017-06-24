@@ -11,6 +11,6 @@ import { SharedModule } from "../shared/shared.module";
     TeamRoutingModule,
     SharedModule
   ],
-  declarations: [TeamComponent, routedComponents]
+  declarations: [ routedComponents]
 })
 export class TeamModule { }

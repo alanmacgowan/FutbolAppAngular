@@ -3,9 +3,11 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { PageNotFoundComponent } from "./page-not-found.component";
 import { TeamModule } from "./team/team.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
+import { LoginModule } from "./login/login.module";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard', },
+  { path: 'login', component: LoginModule},
   { path: 'dashboard', component: DashboardModule},
   { path: 'teams', loadChildren: 'app/team/team.module#TeamModule' },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },

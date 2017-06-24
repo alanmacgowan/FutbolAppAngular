@@ -9,7 +9,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var team_routing_module_1 = require("./team-routing.module");
-var team_component_1 = require("./team.component");
 var shared_module_1 = require("../shared/shared.module");
 var TeamModule = (function () {
     function TeamModule() {
@@ -23,7 +22,7 @@ TeamModule = __decorate([
             team_routing_module_1.TeamRoutingModule,
             shared_module_1.SharedModule
         ],
-        declarations: [team_component_1.TeamComponent, team_routing_module_1.routedComponents]
+        declarations: [team_routing_module_1.routedComponents]
     })
 ], TeamModule);
 exports.TeamModule = TeamModule;

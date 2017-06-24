@@ -10,8 +10,10 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var page_not_found_component_1 = require("./page-not-found.component");
 var dashboard_module_1 = require("./dashboard/dashboard.module");
+var login_module_1 = require("./login/login.module");
 var routes = [
     { path: '', pathMatch: 'full', redirectTo: 'dashboard', },
+    { path: 'login', component: login_module_1.LoginModule },
     { path: 'dashboard', component: dashboard_module_1.DashboardModule },
     { path: 'teams', loadChildren: 'app/team/team.module#TeamModule' },
     { path: '**', pathMatch: 'full', component: page_not_found_component_1.PageNotFoundComponent },

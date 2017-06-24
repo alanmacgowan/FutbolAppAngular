@@ -25,7 +25,7 @@ import { DashboardModule } from "./dashboard/dashboard.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    //LoginModule,
+    LoginModule,
     DashboardModule,
     TeamModule, 
     AppRoutingModule,
