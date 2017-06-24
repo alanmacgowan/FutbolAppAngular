@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit {
       { caption: 'Dashboard', link: ['/dashboard'] },
       { caption: 'Teams', link: ['/teams'] },
       { caption: 'Login', link: ['/login'] },
-    ];
+      { caption: 'Admin', link: ['/admin'] }
+      ];
   }
 
   

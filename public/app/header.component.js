@@ -25,6 +25,7 @@ var HeaderComponent = (function () {
             { caption: 'Dashboard', link: ['/dashboard'] },
             { caption: 'Teams', link: ['/teams'] },
             { caption: 'Login', link: ['/login'] },
+            { caption: 'Admin', link: ['/admin'] }
         ];
     };
     return HeaderComponent;

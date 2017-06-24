@@ -7,23 +7,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var login_routing_module_1 = require("./login-routing.module");
-var login_service_1 = require("./login.service");
-var LoginModule = (function () {
-    function LoginModule() {
+var UserProfileService = (function () {
+    function UserProfileService() {
+        this.isLoggedIn = false;
     }
-    return LoginModule;
+    return UserProfileService;
 }());
-LoginModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            common_1.CommonModule,
-            login_routing_module_1.LoginRoutingModule
-        ],
-        declarations: [login_routing_module_1.routedComponents],
-        providers: [login_service_1.LoginService]
-    })
-], LoginModule);
-exports.LoginModule = LoginModule;
-//# sourceMappingURL=login.module.js.map
+UserProfileService = __decorate([
+    core_1.Injectable()
+], UserProfileService);
+exports.UserProfileService = UserProfileService;
+//# sourceMappingURL=user-profile.service.js.map

@@ -7,23 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var login_routing_module_1 = require("./login-routing.module");
-var login_service_1 = require("./login.service");
-var LoginModule = (function () {
-    function LoginModule() {
+var router_1 = require("@angular/router");
+var admin_component_1 = require("./admin.component");
+var routes = [
+    { path: '', component: admin_component_1.AdminComponent }
+];
+var AdminRoutingModule = (function () {
+    function AdminRoutingModule() {
     }
-    return LoginModule;
+    return AdminRoutingModule;
 }());
-LoginModule = __decorate([
+AdminRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [
-            common_1.CommonModule,
-            login_routing_module_1.LoginRoutingModule
-        ],
-        declarations: [login_routing_module_1.routedComponents],
-        providers: [login_service_1.LoginService]
+        imports: [router_1.RouterModule.forChild(routes)],
+        exports: [router_1.RouterModule]
     })
-], LoginModule);
-exports.LoginModule = LoginModule;
-//# sourceMappingURL=login.module.js.map
+], AdminRoutingModule);
+exports.AdminRoutingModule = AdminRoutingModule;
+exports.routedComponents = [admin_component_1.AdminComponent];
+//# sourceMappingURL=admin-routing.module.js.map
