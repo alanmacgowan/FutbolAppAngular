@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var login_routing_module_1 = require("./login-routing.module");
+var login_service_1 = require("./login.service");
 var LoginModule = (function () {
     function LoginModule() {
     }
@@ -20,7 +21,8 @@ LoginModule = __decorate([
             common_1.CommonModule,
             login_routing_module_1.LoginRoutingModule
         ],
-        declarations: [login_routing_module_1.routedComponents]
+        declarations: [login_routing_module_1.routedComponents],
+        providers: [login_service_1.LoginService]
     })
 ], LoginModule);
 exports.LoginModule = LoginModule;
