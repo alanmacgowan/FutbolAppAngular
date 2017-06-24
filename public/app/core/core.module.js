@@ -29,6 +29,7 @@ var ensureModuleLoadedOnceGuard_1 = require("../shared/ensureModuleLoadedOnceGua
 var data_filter_service_1 = require("./data-filter.service");
 var trackby_service_1 = require("./trackby.service");
 var sorter_1 = require("./sorter");
+var toast_module_1 = require("./toast/toast.module");
 var CoreModule = (function (_super) {
     __extends(CoreModule, _super);
     //Looks for the module in the parent injector to see if it's already been loaded (only want it loaded once)
@@ -39,7 +40,8 @@ var CoreModule = (function (_super) {
 }(ensureModuleLoadedOnceGuard_1.EnsureModuleLoadedOnceGuard));
 CoreModule = __decorate([
     core_1.NgModule({
-        imports: [http_1.HttpModule],
+        imports: [http_1.HttpModule, toast_module_1.ToastModule],
+        exports: [toast_module_1.ToastModule],
         providers: [
             data_service_1.DataService,
             data_filter_service_1.DataFilterService,

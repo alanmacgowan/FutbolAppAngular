@@ -11,6 +11,8 @@ import { CoreModule } from "./core/core.module";
 import { TeamModule } from "./team/team.module";
 import { FooterComponent } from "./footer.component";
 import { HeaderComponent } from "./header.component";
+import { LoginModule } from "./login/login.module";
+import { DashboardModule } from "./dashboard/dashboard.module";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { HeaderComponent } from "./header.component";
     BrowserModule,
     FormsModule,
     HttpModule,
+    //LoginModule,
+    DashboardModule,
     TeamModule, 
     AppRoutingModule,
     CoreModule,   //Singleton objects

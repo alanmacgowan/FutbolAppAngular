@@ -9,9 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var page_not_found_component_1 = require("./page-not-found.component");
+var dashboard_module_1 = require("./dashboard/dashboard.module");
 var routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'teams', },
-    //{ path: 'teams', component: TeamModule},
+    { path: '', pathMatch: 'full', redirectTo: 'dashboard', },
+    { path: 'dashboard', component: dashboard_module_1.DashboardModule },
     { path: 'teams', loadChildren: 'app/team/team.module#TeamModule' },
     { path: '**', pathMatch: 'full', component: page_not_found_component_1.PageNotFoundComponent },
 ];

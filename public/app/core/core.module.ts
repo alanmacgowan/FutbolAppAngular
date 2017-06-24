@@ -6,9 +6,11 @@ import { EnsureModuleLoadedOnceGuard } from "../shared/ensureModuleLoadedOnceGua
 import { DataFilterService } from "./data-filter.service";
 import { TrackByService } from "./trackby.service";
 import { Sorter } from "./sorter";
+import { ToastModule } from "./toast/toast.module";
 
 @NgModule({
-  imports: [ HttpModule ],
+  imports: [ HttpModule, ToastModule ],
+  exports: [ ToastModule ],
   providers: [
     DataService,
     DataFilterService,

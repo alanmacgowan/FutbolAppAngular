@@ -12,3 +12,4 @@ import { PaginationComponent } from "./pagination/pagination.component";
   exports: [ CommonModule, FormsModule, ReactiveFormsModule, CapitalizePipe, FilterTextboxComponent, PaginationComponent  ]
 })
 export class SharedModule { }
+

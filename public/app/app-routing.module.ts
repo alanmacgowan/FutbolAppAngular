@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { PageNotFoundComponent } from "./page-not-found.component";
 import { TeamModule } from "./team/team.module";
+import { DashboardModule } from "./dashboard/dashboard.module";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'teams', },
-  //{ path: 'teams', component: TeamModule},
+  { path: '', pathMatch: 'full', redirectTo: 'dashboard', },
+  { path: 'dashboard', component: DashboardModule},
   { path: 'teams', loadChildren: 'app/team/team.module#TeamModule' },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];

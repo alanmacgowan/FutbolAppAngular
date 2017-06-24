@@ -18,6 +18,7 @@ var core_module_1 = require("./core/core.module");
 var team_module_1 = require("./team/team.module");
 var footer_component_1 = require("./footer.component");
 var header_component_1 = require("./header.component");
+var dashboard_module_1 = require("./dashboard/dashboard.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,6 +36,8 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
+            //LoginModule,
+            dashboard_module_1.DashboardModule,
             team_module_1.TeamModule,
             app_routing_module_1.AppRoutingModule,
             core_module_1.CoreModule,

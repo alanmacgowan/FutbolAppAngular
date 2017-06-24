@@ -8,21 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var login_component_1 = require("./login.component");
+var dashboard_component_1 = require("./dashboard.component");
 var routes = [
-    { path: 'login', component: login_component_1.LoginComponent }
+    { path: '', component: dashboard_component_1.DashboardComponent, data: { title: 'Top Characters' } },
 ];
-var LoginRoutingModule = (function () {
-    function LoginRoutingModule() {
+var DashboardRoutingModule = (function () {
+    function DashboardRoutingModule() {
     }
-    return LoginRoutingModule;
+    return DashboardRoutingModule;
 }());
-LoginRoutingModule = __decorate([
+DashboardRoutingModule = __decorate([
     core_1.NgModule({
         imports: [router_1.RouterModule.forChild(routes)],
-        exports: [router_1.RouterModule]
+        exports: [router_1.RouterModule],
     })
-], LoginRoutingModule);
-exports.LoginRoutingModule = LoginRoutingModule;
-exports.routedComponents = [login_component_1.LoginComponent];
-//# sourceMappingURL=login-routing.module.js.map
+], DashboardRoutingModule);
+exports.DashboardRoutingModule = DashboardRoutingModule;
+exports.routedComponents = [dashboard_component_1.DashboardComponent];
+//# sourceMappingURL=dashboard-routing.module.js.map

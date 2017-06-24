@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+class MenuItem {
+  constructor(public caption: string, public link: any[]) { }
+}
+
 @Component({
     moduleId: module.id,
     selector: 'app-header',
@@ -9,8 +13,15 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  menuItems: MenuItem[];
 
+  ngOnInit() {
+    this.menuItems = [
+      { caption: 'Dashboard', link: ['/dashboard'] },
+      { caption: 'Teams', link: ['/teams'] },
+      { caption: 'Login', link: ['/login'] },
+    ];
   }
+
   
 }

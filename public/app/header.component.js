@@ -10,10 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var MenuItem = (function () {
+    function MenuItem(caption, link) {
+        this.caption = caption;
+        this.link = link;
+    }
+    return MenuItem;
+}());
 var HeaderComponent = (function () {
     function HeaderComponent() {
     }
     HeaderComponent.prototype.ngOnInit = function () {
+        this.menuItems = [
+            { caption: 'Dashboard', link: ['/dashboard'] },
+            { caption: 'Teams', link: ['/teams'] },
+            { caption: 'Login', link: ['/login'] },
+        ];
     };
     return HeaderComponent;
 }());
