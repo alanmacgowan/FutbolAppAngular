@@ -30,6 +30,8 @@ var data_filter_service_1 = require("./data-filter.service");
 var trackby_service_1 = require("./trackby.service");
 var sorter_1 = require("./sorter");
 var toast_module_1 = require("./toast/toast.module");
+var index_1 = require("./index");
+var spinner_module_1 = require("./spinner/spinner.module");
 var CoreModule = (function (_super) {
     __extends(CoreModule, _super);
     //Looks for the module in the parent injector to see if it's already been loaded (only want it loaded once)
@@ -40,13 +42,14 @@ var CoreModule = (function (_super) {
 }(ensureModuleLoadedOnceGuard_1.EnsureModuleLoadedOnceGuard));
 CoreModule = __decorate([
     core_1.NgModule({
-        imports: [http_1.HttpModule, toast_module_1.ToastModule],
-        exports: [toast_module_1.ToastModule],
+        imports: [http_1.HttpModule, toast_module_1.ToastModule, spinner_module_1.SpinnerModule],
+        exports: [toast_module_1.ToastModule, spinner_module_1.SpinnerModule],
         providers: [
             data_service_1.DataService,
             data_filter_service_1.DataFilterService,
             sorter_1.Sorter,
-            trackby_service_1.TrackByService
+            trackby_service_1.TrackByService,
+            index_1.ExceptionService
         ]
     }),
     __param(0, core_1.Optional()), __param(0, core_1.SkipSelf()),

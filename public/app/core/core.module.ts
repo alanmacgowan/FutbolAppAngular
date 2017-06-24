@@ -7,15 +7,18 @@ import { DataFilterService } from "./data-filter.service";
 import { TrackByService } from "./trackby.service";
 import { Sorter } from "./sorter";
 import { ToastModule } from "./toast/toast.module";
+import { ExceptionService } from "./index";
+import { SpinnerModule } from "./spinner/spinner.module";
 
 @NgModule({
-  imports: [ HttpModule, ToastModule ],
-  exports: [ ToastModule ],
+  imports: [ HttpModule, ToastModule, SpinnerModule ],
+  exports: [ ToastModule, SpinnerModule ],
   providers: [
     DataService,
     DataFilterService,
     Sorter,
-    TrackByService ]
+    TrackByService,
+    ExceptionService]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {    //Ensure that CoreModule is only loaded into AppModule
 

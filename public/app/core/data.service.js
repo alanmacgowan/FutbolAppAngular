@@ -11,25 +11,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-//Grab everything with import 'rxjs/Rx';
-var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/observable/throw");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
+var exception_service_1 = require("./exception.service");
+var index_1 = require("./index");
 var DataService = (function () {
-    function DataService(http) {
+    function DataService(http, exceptionService, spinnerService) {
         this.http = http;
+        this.exceptionService = exceptionService;
+        this.spinnerService = spinnerService;
         this.baseUrl = '/api/teams';
     }
     DataService.prototype.getTeams = function () {
+        var _this = this;
+        this.spinnerService.show();
         return this.http.get(this.baseUrl)
             .map(function (res) {
             var teams = res.json();
             return teams;
         })
-            .catch(this.handleError);
+            .catch(this.exceptionService.catchBadResponse)
+            .finally(function () { return _this.spinnerService.hide(); });
     };
     DataService.prototype.getTeamsPage = function (page, pageSize) {
+        var _this = this;
+        this.spinnerService.show();
         return this.http.get(this.baseUrl + "/page/" + page + "/" + pageSize)
             .map(function (res) {
             var totalRecords = +res.headers.get('x-inlinecount');
@@ -39,29 +46,16 @@ var DataService = (function () {
                 totalRecords: totalRecords
             };
         })
-            .catch(this.handleError);
-    };
-    DataService.prototype.handleError = function (error) {
-        console.error('server error:', error);
-        if (error instanceof http_1.Response) {
-            var errMessage = '';
-            try {
-                errMessage = error.json().error;
-            }
-            catch (err) {
-                errMessage = error.statusText;
-            }
-            return Observable_1.Observable.throw(errMessage);
-            // Use the following instead if using lite-server
-            //return Observable.throw(err.text() || 'backend server error');
-        }
-        return Observable_1.Observable.throw(error || 'Node.js server error');
+            .catch(this.exceptionService.catchBadResponse)
+            .finally(function () { return _this.spinnerService.hide(); });
     };
     return DataService;
 }());
 DataService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http,
+        exception_service_1.ExceptionService,
+        index_1.SpinnerService])
 ], DataService);
 exports.DataService = DataService;
 //# sourceMappingURL=data.service.js.map

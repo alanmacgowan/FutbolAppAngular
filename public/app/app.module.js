@@ -10,6 +10,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+require("./core/rxjs-extensions");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var page_not_found_component_1 = require("./page-not-found.component");
