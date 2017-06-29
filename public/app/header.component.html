@@ -9,9 +9,14 @@
           </button>
           <a class="navbar-brand" href="#">Sample App</a>
 
-        <a *ngFor="let item of menuItems" [routerLink]="item.link" class="nav-link" routerLinkActive="router-link-active" href="">{{item.caption}}</a>
-
         </div>
+        
+        <ul class="nav nav-tabs">
+          <li *ngFor="let item of menuItems" >
+             <a [routerLink]="item.link" class="nav-link" routerLinkActive="router-link-active" href="">{{item.caption}}</a>
+          </li>    
+        </ul>
+
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
            

@@ -26,8 +26,6 @@ import { DashboardModule } from "./dashboard/dashboard.module";
     FormsModule,
     HttpModule,
     LoginModule,
-    DashboardModule,
-    TeamModule, 
     AppRoutingModule,
     CoreModule,   //Singleton objects
     SharedModule  //Shared (multi-instance) objects

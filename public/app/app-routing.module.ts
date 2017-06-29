@@ -17,7 +17,7 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   { path: 'login', component: LoginModule},
-  { path: 'dashboard', component: DashboardModule},
+  { path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboardModule' },
   { path: 'teams', loadChildren: 'app/team/team.module#TeamModule' },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
